@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - Study Buddy Finder</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="sidebar">
+            <h2>Online Users</h2>
+            <ul id="userList">
+                <li><span class="status online"></span> Alex</li>
+                <li><span class="status online"></span> Jamie</li>
+                <li><span class="status online"></span> Taylor</li>
+            </ul>
+        </div>
+
+        
+        <div class="chat-box-container">
+            <div class="chat-header">
+                <h2 id="chatUser">Chat</h2>
+                <span class="typing-indicator" id="typingIndicator">Someone is typing...</span>
+            </div>
+
+            <div class="chat-box" id="chatBox">
+
+            </div>
+
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type a message..." oninput="showTyping()">
+                <button id="sendButton">Send</button>
+            </div>
+        </div>
+            
+    
+    <script src="chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+</head>
+<body>
+    <div class="blog-container">
+        <h1>Edit Post</h1>
+        <input type="text" id="title" placeholder="Title" required>
+        <textarea id="content" placeholder="Edit your post..." required></textarea>
+        <select id="category">
+            <option value="General">General</option>
+            <option value="Study Tips">Study Tips</option>
+            <option value="Motivation">Motivation</option>
+            <option value="Productivity">Productivity</option>
+        </select>
+        <button class="submit-btn" onclick="updatePost()">Save Changes</button>
+    </div>
+
+    <script>
+        let index;
+        document.addEventListener("DOMContentLoaded", () =>{
+            const urlParams = new URLSearchParams(window.location.search);
+            index = urlParams.get("index");
+
+            let posts = JSON.parse(localStorage.getItem("blogPosts")) || [];
+            if (posts[index]) {
+                document.getElementById("title").value = posts[index].title;
+                document.getElementById("content").value = posts[index].content;
+                document.getElementById("category").value = posts[index].category || "General";
+                
+            }else {
+                document.body.innerHTML = "<h2>Post not found!</h2>";
+            }
+        });
+
+        function updatePost() {
+            let title = document.getElementById("title").value;
+            let content = document.getElementById("content").value;
+            let category = document.getElementById("category").value;
+
+            if (title.trim() === "" || content.trim() === "") {
+                alert("Please fill out all fields!");
+                return;
+            }
+
+            let posts = JSON.parse(localStorage.getItem("blogPosts")) || [] ;
+            posts[index] = {title, content, category};
+            localStorage.setItem("blogpPosts", JSON.stringify(posts));
+
+            window.location.href = "blog.html";
+
+        }
+    </script>
+</body>
+</html>

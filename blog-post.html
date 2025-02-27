@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blog-container">
+        <h1 id="title"></h1>
+        <p id="content"></p>
+        <button class="back-btn" onclick="window.location.href='blog.html'"> Back to Blog</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const index = urlParams.get("index");
+
+            let posts = JSON.parse(localStorage.getItem("blogPosts")) || [];
+            if (posts[index]) {
+                document.getElementById("title").textContent = posts[index].title;
+                document.getElementById("content").textContent = posts[index].content;
+            } else {
+                document.body.innerHTML = "<h2>Post not found!</h2>";
+            }
+        });
+    </script>
+</body>
+</html>

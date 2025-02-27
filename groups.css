@@ -1,0 +1,219 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: fadeIn 1s ease-in-out;
+}
+
+.title {
+    font-size: 34px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+header h1 {
+    font-size: 28px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container input {
+    width: 60%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: 0.3s;
+}
+
+.search-container input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search-container button {
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    background: linear-gradient(45deg, #2980b9, #1e6fa8);
+}
+
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.filters select,
+.filters input[type="checkbox"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: 0.3s;
+    outline: none;
+}
+
+.filters label {
+    color: white;
+    font-size: 14px;
+}
+
+.filters button {
+    padding: 10px 15px;
+    border-radius: 6px;
+    background: linear-gradient(45deg, #ff4757, #e74c3c);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filters button:hover {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+}
+
+
+
+
+button {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #2980b9, #1e6fa8);
+}
+
+.groups-lists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.group-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.group-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 70%);
+    transform: rotate(25deg);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.group-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0px 20px rgba(255, 255, 255, 0.3);
+}
+
+
+.group-card p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.join-btn {
+    background: linear-gradient(45deg, #ff4757, #e74c3c);
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.join-btn:hover {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 71, 87, 0.5);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .groups-lists {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+

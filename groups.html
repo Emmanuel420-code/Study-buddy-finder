@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groups</title>
+    <link rel="stylesheet" href="groups.css">
+</head>
+<body>
+    
+    <div class="container">
+            <h1 class="title">Study Groups</h1>
+
+            <div class="filters">
+                <input type="text" placeholder="Search groups...">
+                <button class="search-btn">Search</button>
+                <select id="categoryFilter">
+                    <option>All Categories</option>
+                    <option>Math</option>
+                    <option>Physics</option>
+                    <option>Computer Science</option>
+                </select>
+                <button onclick="applyFilters()">Apply Filters</button>
+            </div>
+
+        <div class="filters-options">
+            <h3>Filters</h3>
+            
+            <div class="checkbox-group">
+                <label><input type="checkbox">Public</label>
+                <label><input type="checkbox">Private</label>
+                <label><input type="checkbox">Invite-only</label>
+                <label>Activity Level: <input type="range"></label>
+                <label>Language:
+                    <select>
+                        <option>Any</option>
+                        <option>English</option>
+                        <option>French</option>
+                    </select>
+                </label>
+                <label>Sort By:
+                    <select>
+                        <option>Most Active</option>
+                        <option>Newest</option>
+                    </select>
+                </label>
+            </div>
+            <button class="apply-btn">Apply Filters</button>
+        </div>
+
+            <div class="groups-lists">
+                <div class="group-card">
+                    <h2>Math Study Group</h2>
+                    <p>10 members | Active</p>
+                    <button class="join-btn">Request to Join</button>
+                </div>
+                <div class="group-card">
+                    <h2>Digital Electronics Study Group</h2>
+                    <p>10 members | Active</p>
+                    <button class="join-btn">Request to Join</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="groups.js"></script>
+</body>
+</html>

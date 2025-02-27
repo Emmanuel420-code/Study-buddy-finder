@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog Post</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="blog-container">
+        <h1>Create a New Post</h1>
+        <input type="text" id="title" placeholder="Title..." required>
+        <textarea id="content" placeholder="Write your post here..." required></textarea>
+        <select id="category">
+            <option value="General">General</option>
+            <option value="Study Tips">Study Tips</option>
+            <option value="Motivation">Motivation</option>
+            <option value="Productivity">Productivity</option>
+        </select>
+        <button class="submit-btn" onclick="submitPost()">Publish</button>
+    </div>
+
+    <script>
+        function submitPost(){
+        let title = document.getElementById("title").value;
+        let content = document.getElementById("content").value;
+        let category = document.getElementById("category").value;
+        
+    
+        if (title.trim() === "" || content.trim() === "") {
+            alert("Please fill out all fields");
+            return;
+        }
+
+        let post = JSON.parse(localStorage.getItem("blogPosts")) || [];
+        posts.push({title, content, category});
+        localStorage.setItem("blogPosts", JSON.stringify(posts)) || [];
+
+        
+        window.location.href = "blog.html";
+    }    
+
+    </script>
+</body>
+</html>

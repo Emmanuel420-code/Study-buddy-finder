@@ -1,0 +1,73 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+.form-container{
+   width: 350px;
+   padding: 30px;
+   background: rgba(255, 255, 255, 0.9);
+   border-radius: 10px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   text-align: center;
+}
+
+@keyframes fadeInUp{
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.input-group{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background: transparent;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.input-group label{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label{
+    top: 0;
+    font-size: 12px;
+    color: #ff758c;
+}
+
+@keyframes shake{
+    0% {transform: translateX(0); }
+    25% {transform: translateX(-5px); }
+    50% {transform: translateX(5px); }
+    75% {transform: translateX(-5px); }
+    100% {transform: translateX(0); }
+
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}

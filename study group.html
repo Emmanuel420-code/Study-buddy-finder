@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="study group.css">
+</head>
+<body>
+    <div class="group-container">
+    <div class="group-header">
+        <h2 id="group-name"> Study Group Name</h2>
+        <button class="leave-btn">Leave Group</button>
+    </div>
+
+    <div class="group-content">
+        <div class="left-panel">
+            <div class="members-card"></div>
+            <h3>Members</h3>
+            <ul class="member-list">
+            <li>John Doe <span class="role admin">Admin</span> <button class="demote">Demote</button></li>
+            <li>Alice Smith <span class="role member">Member</span> <button class="promote">Promote</button></li>
+            <li>Bob <span class="role member">Member</span></li>
+
+        </div>
+        <div class="user-list">
+            <h3>Group Members</h3>
+            <ul id="members-list">
+                <li><span class="status online"></span> Alice</li>
+                <li><span class="status offline"></span> Bob</li>
+
+            </ul>
+        </div>
+           
+    </div>
+
+    <div class="group-settings">
+        <h3>Group Settings</h3>
+        <label>Group Name:</label>
+        <input type="text" value="Study Group Name">
+
+        <label>Description:</label>
+        <textarea>This is a study group</textarea>
+        <button class="save-btn">Save Changes</button>
+    </div>
+
+    <div class="resources-card">
+        <h3>Study Resources</h3>
+        <input type="file">
+        <button class="upload-btn">Upload</button>
+        <input type="text" placeholder="Paste study link here">
+        <button class="add-link">Add Link</button>
+
+        <ul id="resource-link"></ul>
+    </div>
+
+    <div class="right-panel">
+        <div class="chat-card">
+            <h3>Group Chat</h3>
+            <div class="chat-box">
+                <div class="message received">Alice: Hello everyone!</div>
+                <div class="message sent">You: Hi Alice!</div>
+            </div>
+            <div class="chat-input-container">
+            <input type="text" class="chat-input" placeholder="Type a message...">
+            <button class="send-btn">Send</button>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
