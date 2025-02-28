@@ -1,40 +1,134 @@
-html, body{
-    height: 100%;
+body {
     margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: #f5f5f5;
+    justify-content: center;
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4);
+    animation: gradientBG 10s ease infinite;
 }
 
-.form-container {
-    width: 350px;
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+
+}
+
+.container {
+    position: relative;
+}
+
+.signup-box {
+    background: rgba(255, 255, 255, 0.1);
     padding: 30px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     text-align: center;
+    width: 320px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.signup-box:hover {
+    transform: scale(1.02);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
 }
 
 input {
     width: 100%;
     padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 2px solid white;
+    font-size: 16px;
+    color: white;
 }
 
-button{
+input:focus {
+    border-bottom: 2px solid #ff9a9e;
+}
+
+label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    transition: 0.3s;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+    top: -10px;
+    font-size: 12px;
+    color: #ffdde1;
+}
+
+.btn {
     width: 100%;
-    padding: 10px;
-    background: #ff6b81;
+    padding: 12px;
     border: none;
+    background: rgba(255, 255, 255, 0.3);
     color: white;
     font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
 }
 
-button:hover{
-    background: #ff4757;
+.btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+#message {
+    margin-top: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .signup-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+    
+    label, input, button {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input {
+        padding: 10px; 
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
 }

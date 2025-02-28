@@ -8,64 +8,46 @@
 </head>
 <body>
     <div class="group-container">
-    <div class="group-header">
-        <h2 id="group-name"> Study Group Name</h2>
-        <button class="leave-btn">Leave Group</button>
-    </div>
-
-    <div class="group-content">
-        <div class="left-panel">
-            <div class="members-card"></div>
-            <h3>Members</h3>
-            <ul class="member-list">
-            <li>John Doe <span class="role admin">Admin</span> <button class="demote">Demote</button></li>
-            <li>Alice Smith <span class="role member">Member</span> <button class="promote">Promote</button></li>
-            <li>Bob <span class="role member">Member</span></li>
-
+        <div class="group-creation">
+            <h3>Create a Study Group</h3>
+            <input type="text" id="group-name" placeholder="Enter group name" />
+            <textarea id="group-description" placeholder="Enter group description"></textarea>
+            <input type="text" id="group-topic" placeholder="Enter group topic" />
+            <button id="create-group">Create Group</button>
         </div>
-        <div class="user-list">
-            <h3>Group Members</h3>
-            <ul id="members-list">
-                <li><span class="status online"></span> Alice</li>
-                <li><span class="status offline"></span> Bob</li>
 
-            </ul>
-        </div>
-           
-    </div>
-
-    <div class="group-settings">
-        <h3>Group Settings</h3>
-        <label>Group Name:</label>
-        <input type="text" value="Study Group Name">
-
-        <label>Description:</label>
-        <textarea>This is a study group</textarea>
-        <button class="save-btn">Save Changes</button>
-    </div>
-
-    <div class="resources-card">
-        <h3>Study Resources</h3>
-        <input type="file">
-        <button class="upload-btn">Upload</button>
-        <input type="text" placeholder="Paste study link here">
-        <button class="add-link">Add Link</button>
-
-        <ul id="resource-link"></ul>
-    </div>
-
-    <div class="right-panel">
-        <div class="chat-card">
-            <h3>Group Chat</h3>
-            <div class="chat-box">
-                <div class="message received">Alice: Hello everyone!</div>
-                <div class="message sent">You: Hi Alice!</div>
+        <div class="groups-list">
+            <h3>Available Groups</h3>
+            <div class="group" id="group-1">
+                <h4>Math Study Group</h4>
+                <button class="join-btn">Join</button>
             </div>
-            <div class="chat-input-container">
-            <input type="text" class="chat-input" placeholder="Type a message...">
-            <button class="send-btn">Send</button>
+            <div class="group" id="group-2">
+                <h4>History Study Group</h4>
+                <button class="join-btn">Join</button>
+            </div>
+        </div>
+    </div>
 
+    <div class="group-chat">
+        <div class="group-header">
+            <h2>Math Study Group</h2>
+            <p>Topic: Algebra</p>
+            <button id="leave-group">Leave Group</button>
 
+            <div class="Schedule-session">
+                <h3>Schedule a Study Session</h3>
+                <input type="datetime-local" id="study-session-time" />
+                <button id="schedule-session-btn">Schedule</button>
+            </div>
+        </div>
+        <div class="chat-container">
+            <div class="message-list" id="message-list">
+
+            </div>
+            <div class="message-input">
+                <input type="text" id="message" placeholder="Type a message..." />
+                <button id="send-btn">Send</button>
             </div>
         </div>
     </div>

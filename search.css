@@ -21,7 +21,14 @@ body {
     background: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.filters label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 .filters h2 {
@@ -41,7 +48,7 @@ body {
 #apply-filters {
     width: 100%;
     padding: 10px;
-    background: #007BFF;
+    background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 5px;
@@ -185,3 +192,84 @@ body {
 .hidden{
     display: none;
 }
+
+.request-btn, .group-btn {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.request-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.group-btn {
+    background-color: #007BFF;
+    color: white;
+}
+
+.request-btn:hover {
+    background-color: #45a049;
+}
+
+.group-btn:hover {
+    background-color: #0056b3;
+}
+
+.study-group-recommendations {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.study-group-recommendations h3 {
+    margin-bottom: 10px;
+}
+
+#recommended-groups {
+    list-style: none;
+    padding: 0;
+}
+
+#recommended-groups li {
+    background: #f4f4f4;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .profile-card {
+        width: 100%;
+    }
+
+    .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .filters select, .filters button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-card {
+        padding: 10px;
+    }
+
+    .study-group-recommendations {
+        padding: 10px;
+    }
+}
+

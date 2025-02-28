@@ -16,19 +16,44 @@
                 <option value="math">Mathematics</option>
                 <option value="Science">Science</option>
                 <option value="programming">Programming</option>
-                <option value="ai">AI</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="physics">Physics</option>
+                <option value="economics">Economics</option>
+                <option value="biology">Biology</option>
+                <option value="computer-science">Computer Science</option>
+                <option value="Further Maths">Further Maths</option>
+                <option value="digital electronics">Digital Electronics</option>
+                <option value="introduction to algorithm">Introduction To Algorithm</option>
+                <option value="introduction to software engineering">Introduction To Software Engineering</option>
+                <option value="computer graphics design">Computer Graphics Design</option>
+                <option value="maintenance methodology">Maintenance Methodology</option>
+
+
 
             </select>
 
             <label for="availability">Availability:</label>
-            <input type="time" id="availability">
-
+            <select id="availability">
+                <option value="any">Any</option>
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+            </select>
             <label for="study-method">Study Method:</label>
             <select id="study-method">
                 <option value="">Any</option>
                 <option value="video">Video Call</option>
                 <option value="text">Text Chat</option>
                 <option value="in-person">In-Person</option>
+            </select>
+
+            <label for="language">Language:</label>
+            <select id="language">
+                <option value="english">English</option>
+                <option value="French">French</option>
+                <option value="English">Spanish</option>
+
+
             </select>
             
             <button id="apply-filters">Apply Filters</button>
@@ -44,6 +69,13 @@
                     <p><strong>Field of Study:</strong> Computer Science</p>
                     <p><strong>Interests:</strong> AI, Math, Programming</p>
                     <button class="message-btn">Message</button>
+                    <button class="request-btn">Send Request</button>
+                    <button class="group-btn">Add to Study Group</button>
+                    </div>
+                    <div class="study-group-recommendations">
+                        <h3>Recommended Study Groups</h3>
+                        <ul id="recommended-groups"></ul>
+                    </div>
 
                 </div>
                 <div id="search-results">
@@ -53,6 +85,6 @@
             </div>
         </main>
      </div>
-    <script src="script.js"></script>
+    <script src="search.js"></script>
 </body>
 </html>

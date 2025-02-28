@@ -108,6 +108,8 @@ body::before {
 .buddy-card {
     background: white;
     padding: 15px;
+    width: 90%;
+    margin-bottom: 20px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -119,8 +121,216 @@ body::before {
 }
 
 footer {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 30px;
     text-align: center;
-    padding: 10px;
-    background: #007bff;
-    color: white;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+footer .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.how-it-works {
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    margin: 30px auto;
+    max-width: 900px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.how-it-works h2 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+.how-it-works .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.how-it-works ol {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.how-it-works li {
+    margin: 20px;
+    font-size: 18px;
+    text-align: center;
+    flex-basis: 200px;
+}
+
+.how-it-works strong {
+    font-weight: 600;
+    color: #007bff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.why-choose-us {
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    margin: 30px auto;
+    max-width: 900px;
+    border: 1px solid rgba(245, 245, 245, 0.3);
+}
+
+.why-choose-us h2 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+.why-choose-us .benfit {
+    margin-bottom: 40px;
+}
+
+.why-choose-us h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.why-choose-us p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+}
+
+@keyframes shimmer {
+    0% {background-position: -200px 0;}
+    100% {background-position: 200px 0;}
+
+}
+
+.study-challenge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    margin: 40px auto;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.challenge-container {
+    max-width: 600px;
+    background: linear-gradient(110deg, rgba(255, 255, 255, 0.2) 40%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.2) 60%);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-size: 200px 100%;
+    animation: shimmer 2s infinite linear;
+    transition: transform 0.3s ease-in-out;
+}
+
+.challenge-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.study-challenge h2 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.study-challenge p {
+    font-size: 16px;
+    color: #f1f1f1;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.challenge-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #ff7f50;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.challenge-btn:hover {
+    background: #ff5733;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 87, 51, 0.3);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {transform: scale(1); }
+    50% {transform: scale(1.05); }
+    100% {transform: scale(1); }
+
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .tranding-grid {
+        flex-direction: column;
+    }
+}
+
+.container, .challenge-container, .how-it-works, .why-choose-us {
+    max-width: 90%;
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8em;
+    }
+    p {
+        font-size: 16px;
+    }
+}
+ img {
+    max-width: 100%;
+    height: auto;
+ }

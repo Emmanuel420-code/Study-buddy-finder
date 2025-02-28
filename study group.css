@@ -1,272 +1,105 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
+* {
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.leave-btn {
-    background: red;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.groups-container {
-    padding: 20px;
-    max-width: 900px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-#group-list{
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: white;
 }
 
-.group-card {
-    padding: 15px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.group-container {
+    width: 90%;
+    max-width: 900px;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .group-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+.group-header h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.group {
+    padding: 15px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.schedule-session {
+    text-align: center;
     padding: 15px;
     border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.group-chat {
-    width: 70%;
-    padding: 10px;
-    border-right: 1px solid #ddd;
-}
-
-.group-members {
-    width: 30%;
-    padding: 10px;
-}
-
-.group-members button {
-    margin-left: 10px;
-    padding: 5px;
-    font-size: 12px;
-    cursor: pointer;
-}
-
-.promote-btn {background: green; color: white;}
-.demote-btn {background: orange; color: white;}
-.kick-btn {background: red; color: white;}
-
-
-.group-settings {
-    margin-top: 20px;
-    padding: 10px;
-    background: #f9f9f9;
-    border-radius: 5px;
-}
-
-.group-settings input, 
-.group-settings textarea {
-    width: 100%;
-    margin: 5px 0;
-    padding: 8px;
-}
-
-#save-group-settings {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
-}
-
-.study-resources {
-    margin-top: 20px;
-    padding: 10px;
-    background: #f9f9f9;
-    border-radius: 5px;
-}
-
-.study-resources input {
-    padding: 8px;
-    width: 200px;
-}
-
-.study-resources button {
-    background: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.delete-resources {
-    background: red;
-    color: white;
-    margin-left: 10px;
-    cursor: pointer;
-}
-
-.status {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 8px;
-}
-
-.online {
-    background: green;
-}
-
-.offline {
-    background: gray;
-}
-
-.group-content {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.left-panel {
-    flex: 1;
-}
-
-.right-panel {
-    flex: 1;
-}
-
-.members-card, .group-settings, .resources-card, .chat-card {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-h3 {
+.schedule-session h3 {
     margin-bottom: 10px;
 }
 
-.members-list {
-    list-style: none;
-    padding: 0;
-}
-
-.members-list li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px;
-    border-bottom: 1px solid #ddd;
-
-}
-
-.role {
-    padding: 4px 8px;
-    border-radius: 5px;
-    font-size: 12px;
-}
-
-.admin {
-    background: gold;
-    color: black;
-}
-
-.member {
-    background: lightgray;
-}
-
-.promote, .demote {
-    background: blue;
-    color: white;
-    border: none;
-    padding: 4px 8px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.demote {
-    background: orange;
-}
-
-.save-btn {
-    background: green;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.upload-btn, .add-link {
-    background: blue;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.chat-box {
-    height: 200px;
-    overflow-y: auto;
-    background: white;
+.schedule-session input {
+    width: 100%;
     padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+    backdrop-filter: blur(8px);
+}
+
+.schedule-session button {
+    margin-top: 10px;
+}
+
+.chat-container {
+    padding: 15px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.message-list {
+    height: 250px;
+    overflow-y: auto;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.message {
-    padding: 8px;
-    margin: 5px 0;
-    border-radius: 10px;
-    max-width: 70%;
-}
-
-.received {
-    background: #ddd;
-    align-self: flex-start;
-}
-
-.sent {
-    background: lightblue;
-    align-self: flex-end;
-    text-align: right;
-}
-
-.chat-input {
-    flex: 1;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    border: 1px solid #ddd;
-}
-
-.chat-input-container {
+.message-input {
     display: flex;
     gap: 10px;
     margin-top: 10px;
 }
 
-.send-btn {
-    background: blue;
-    color: white;
+.message-input input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
+    background: rgba(255, 255, 255, 0.3);
 }
-
-.send-btn:hover {
-    background: darkblue;
-}
-
