@@ -3,49 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile - Study Buddy Finder</title>
+    <title>Profile Page</title>
     <link rel="stylesheet" href="profile.css">
 </head>
 <body>
-   
-    <div class="navbar">
-        <div class="Logo">Study Buddy Finder</div>
-        <ul class="nav-links">
-            <li><a href="search.html">Find a Buddy</a></li>
-            <li><a href="study group.html">Study Groups</a></li>
-            <li><a href="inbox.html">Messages</a></li>
-            <li><a href="logout.html" class="btn-logout">Logout</a></li>
-
-        </ul>
-    </div>
-
+    <div class="profile-container"></div>
     <div class="profile-container">
-        <div class="profile-card">
-            <img src="avatar1.jpeg" alt="User Profile Picture" class="profile-pic">
-            <h2>John Doe</h2>
-            <p><strong>Field of Study:</strong> Computer Science</p>
-            <p><strong>Interests:</strong> Programming, AI, Math Science</p>
-            <button class="btn-edit">Edit Profile</button>
-
+        <h1>User Profile</h1>
+        <div class="profile-info">
+            <img src="avatar1.jpeg" alt="Profile Picture" class="profile-pic" id="profilePic">
+            <input type="file" id="profilePicInput" accept="image/*" class="hidden">
+            <button id="changePicBtn">Change Profile Picture</button>
+            <h2 id="username">John Doe</h2>
+            <p id="bio">Aspiring software engineer, passionate about coding.</p>
+            <p><strong>Level of Education:</strong> <span id="education">Bachelor's Degree</span></p>
+            <p><strong>Time Zone:</strong> <span id="timezone">GMT+5</span></p>
         </div>
 
-        <div class="buddies-section">
-            <h3>Study Buddies</h3>
-            <div class="buddy-list">
-                <div class="buddy">
-                    <img src="avatar2.jpeg" alt="Buddy">
-                    <p>Emily - Mathematics</p>
-                </div>
-                <div class="buddy">
-                    <img src="avatar2.jpeg" alt="Buddy">
-                    <p>James - Science</p>
-            </div>
-            <div class="buddy">
-                <img src="avatar1.jpeg" alt="Buddy">
-                <p>Sophia - Programming</p>
+        <button id="editBtn">Edit Profile</button>
+
+        <div id="editForm" class="hidden">
+            <label for="newBio">Bio:</label>
+            <input type="text" id="newBio" value="Aspiring software engineer, passionate about coding">
+
+            <label for="newEducation">Level of Education:</label>
+            <input type="text" id="newEducation" value="Bachelor's Degree">
+
+            <label for="newTimezone">Time Zone:</label>
+            <input type="text" id="newTimezone" value="GMT+5">
+
+            <button id="saveBtn">Save</button>
+            <button id="cancelBtn">Cancel</button>
         </div>
     </div>
-   
-    <script src="profile.js"></script>
+    <script>
+        const params = new URLSearchParams(window.loaction.search);
+        const name = params.get("name");
+        const subjects = params.get("subjects");
+
+        if (name) document.getElementById("profile-name").innerText = name;
+        if (subjects) document.getElementById("profile-subjects").innerText = "Subjetcs:" + subjects;
+    </script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getAuth, onAuthSateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCeSFUFnRioSyhSdirsfTJUjMf4awd2R_Q",
+            authDomain: "study-buddy-finder-49942.firebaseapp.com",
+            projectId: "study-buddy-finder-49942",
+            storageBucket: "study-buddy-finder-49942.firebasestorage.app",
+            messagingSenderId: "128259919133",
+            appId: "1:128259919133:web:45be0ec18b5dd60e0fa5f4"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+onAuthSateChanged(auth, (user) => {
+    if (!user) {
+        alert("You must be logged in to access this page.");
+        window.location.href = "login.html";
+    } else {
+        document.getElementById("user-email").textContent = user.email;
+    }
+});
+
+document.getElementById("logout-btn").addEventListener("click", () => {
+    signOut(auth).then(() => {
+        alert("Logged out successfully!");
+        window.location.href = "login.html";
+    }).catch((error) => {
+        alert(error.message)
+    })
+})
+
+    </script>
 </body>
 </html>

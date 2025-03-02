@@ -70,3 +70,42 @@ document.addEventListener("DOMContentLoaded", function () {
         groupList.appendChild(li);
     });
 });
+
+//
+document.querySelectorAll('.buddy-card').forEach(card => {
+    card.addEventListener('mouseover', () => {
+        card.style.transform = 'scale(1.05)';
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'scale(1)';
+    });
+});
+
+//
+
+document.addEventListener("DOMContentLoaded", function () {
+    const filterBtn = document.getElementById("apply-filters");
+
+    filterBtn.addEventListener("click", function() {
+        const skillLevel = document.getElementById("skill-level").value;
+        const studyMethod = document.getElementById("study-method").value;
+        const availability = document.getElementById("availability").value;
+
+        const buddyCards = document.querySelectorAll(".buddy-card");
+
+        buddyCards.forEach(card => {
+            const cardSkill = card.getAttribute("data-skill");
+            const cardMethod = card.getAttribute("data-method");
+            const cardAvailability = card.getAttribute("data-availability");
+
+            let show = true;
+
+            if (skillLevel && cardSkill !== skillLevel) show = false;
+            if (studyMethod && cardMethod !== studyMethod) show = false;
+            if (availability && cardAvailability !== availability) show = false;
+
+            card.style.display = show ? "block" : "none";
+        });
+    });
+});

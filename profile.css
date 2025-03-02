@@ -1,91 +1,57 @@
-.profile-container{
-    max-width: 600px;
-    margin: 40px auto;
-    background: white;
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #89CFF0, #D3D3D3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.profile-container {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.profile-card {
-    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .profile-pic {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    margin-bottom: 10px
+    border: 3px solid white;
+    object-fit: cover;
 }
 
-.btn-edit {
-    background: #007bff;
+input[type="file"] {
+    display: none;
+}
+
+button {
+    background: #007BFF;
+    border: none;
     color: white;
     padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
-.btn-edit:hover {
+button:hover {
     background: #0056b3;
 }
 
-.buddies-section {
-    margin-top: 20px;
+.hidden {
+    display: none;
 }
 
-.buddy-list {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.buddy {
-    text-align: center;
-    background: #f4f4f4;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.buddy img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-}
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #007bff;
-    padding: 15px 20px;
-    color: white;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li {
-    display: inline;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1em;
-}
-
-.nav-links a:hover {
-    text-decoration: underline;
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
